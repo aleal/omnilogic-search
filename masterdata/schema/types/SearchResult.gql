@@ -1,0 +1,8 @@
+type SearchResult {
+  total: Int
+  results: [Result]
+}
+
+type Result {
+  name: String
+}

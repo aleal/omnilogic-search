@@ -1,38 +1,34 @@
-import Simple from './simple'
-import Nested from './nested'
-import css from './style.css'
-import less from './styleLess.less'
-import sass from './styleSass.scss'
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
+import {graphql} from 'react-apollo'
+import gql from 'graphql-tag'
 import classNames from 'classnames/bind'
-import Placeholder from 'vtex.render-runtime/components/Placeholder.js'
+import sass from './styleSass.scss'
 
-const cx = classNames.bind({...css, ...less, ...sass})
+const cx = classNames.bind(sass)
 
 //eslint-disable-next-line
 class HelloWorld extends Component {
   render () {
+    const {data, loading} = this.props
     return (
       <div>
-        <span className={cx('font-size', 'font-color', 'black-bg')}>
-          Supporting CSS, Less, and Sass!
-        </span>
-        <h3 className="theme">Theme CSS</h3>
-        <h3 className={cx('css')}>CSS Module</h3>
-        <h3 className={cx('less')}>LESS Module</h3>
-        <h3 className={cx('sass')}>SASS Module</h3>
-        <Placeholder id="center">
-          <Simple foo="Center configured in code" />
-        </Placeholder>
-        <Placeholder id="button">
-          <button>Hello!</button>
-        </Placeholder>
-        <Placeholder id="footer">
-          <Nested />
-        </Placeholder>
+        {loading && 'loading'}
+        {data && JSON.stringify(data)}
       </div>
     )
   }
 }
 
-export default HelloWorld
+HelloWorld.propTypes = {
+  data: PropTypes.object,
+}
+
+export const query = gql`
+query {
+  product {
+    name
+  }
+}
+`
+
+export default graphql(query)(HelloWorld)
