@@ -1,0 +1,12 @@
+.font-size {
+  font-size: 30px;
+  display: flex;
+}
+
+.css {
+  color: green;
+}
+
+.css::before {
+  content: "✅ ";
+}

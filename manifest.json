@@ -7,6 +7,11 @@
   "dependencies": {
     "vtex.masterdata-graphql": "0.x",
     "infra:colossus-js": "0.x",
+    "vtex.render-runtime": "0.x",
+    "vtex.render-builder": "0.x",
+    "npm:classnames": "2.2.5",
+    "npm:ramda": "0.23.0",
+    "npm:@vtex/api": "0.12.11",
     "npm:axios": "^0.15.3",
     "npm:babel-runtime": "^6.20.0",
     "npm:bluebird": "^3.4.1",

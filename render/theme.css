@@ -1,0 +1,7 @@
+.theme {
+  color: green;
+}
+
+.theme::before {
+  content: "✅ ";
+}

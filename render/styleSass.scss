@@ -1,0 +1,14 @@
+$primary-color: white;
+
+.font-color {
+  color: $primary-color;
+  display: flex;
+}
+
+.sass {
+  color: green;
+}
+
+.sass::before {
+  content: "✅ ";
+}
