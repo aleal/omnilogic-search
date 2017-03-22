@@ -1,7 +1,6 @@
 {
   "index": {
     "path": "/",
-    "component": "index.js",
-    "theme": "theme.css"
+    "component": "index.js"
   }
 }

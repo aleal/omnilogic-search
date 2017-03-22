@@ -2,16 +2,16 @@ import React, {Component, PropTypes} from 'react'
 import {graphql} from 'react-apollo'
 import gql from 'graphql-tag'
 import classNames from 'classnames/bind'
-import sass from './styleSass.scss'
+import style from './style.scss'
 
-const cx = classNames.bind(sass)
+const cx = classNames.bind(style)
 
 //eslint-disable-next-line
 class HelloWorld extends Component {
   render () {
     const {data, loading} = this.props
     return (
-      <div>
+      <div className={cx('sass')}>
         {loading && 'loading'}
         {data && JSON.stringify(data)}
       </div>
@@ -25,8 +25,11 @@ HelloWorld.propTypes = {
 
 export const query = gql`
 query {
-  product {
-    name
+  search {
+    total
+    results {
+      name
+    }
   }
 }
 `
