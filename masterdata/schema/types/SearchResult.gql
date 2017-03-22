@@ -5,4 +5,15 @@ type SearchResult {
 
 type Result {
   name: String
+  url: String,
+  available: Boolean,
+  img: String,
+  sku: String,
+  price: Float,
+  listPrice: Float,
+  installments: Int,
+  installmentValue: Float,
+  score: Float,
+  productId: String,
+  label: String
 }
